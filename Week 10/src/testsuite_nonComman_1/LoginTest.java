@@ -1,4 +1,4 @@
-package testsuite;
+package testsuite_nonComman_1;
 
 import browserfactory.BaseTest;
 import org.junit.After;
@@ -30,6 +30,8 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void userShouldLoginSuccessfullyWithValidCredentials(){
+        String expectedMessage = "Log out";
+
         WebElement loginLink = driver.findElement(By.className("ico-login"));
         loginLink.click();
 
@@ -42,11 +44,8 @@ public class LoginTest extends BaseTest {
         WebElement loginButton = driver.findElement(By.linkText("Log in"));
         loginButton.click();
 
-//        WebElement logoutMessage = driver.findElement(By.id("ico-logout"));
-//
-//        String actualMessage = logoutMessage.getText();
-//        String expectedMessage = "Log out";
-//       Assert.assertEquals("Verifying LogoutMessage",expectedMessage,actualMessage);
+        //String actualMessage = driver.findElement(By.id("ico-logout")).getText();
+        //Assert.assertEquals("Verifying LogoutMessage",expectedMessage,actualMessage);
 
     }
 
