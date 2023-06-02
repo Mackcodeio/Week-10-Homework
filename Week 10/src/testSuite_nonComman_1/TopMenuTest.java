@@ -1,4 +1,4 @@
-package testsuite_nonComman_1;
+package testSuite_nonComman_1;
 
 import browserfactory.BaseTest;
 import org.junit.After;

@@ -38,6 +38,19 @@ public class LoginTest extends BaseTest {
      //   Assert.assertEquals("TestMessage",expectedMessage,actualMessage);
 
     }
+
+    @Test
+    public void verifyThePasswordErrorMessage(){
+        driver.findElement(By.xpath("//input[@id='username']")).sendKeys("tomsmith1");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("SuperSecretPassword");
+        driver.findElement(By.xpath("//button[@class='radius']")).click();
+        String expectedMessage = "Your password is invalid!";
+        String actualMessage = driver.findElement(By.xpath("//div[@class='flash error']")).getText();
+        System.out.println("------expectedMessage------"+expectedMessage);
+        System.out.println("------actualMessage------"+actualMessage);
+        // Assert.assertEquals("TestMessage",expectedMessage,actualMessage);
+    }
+
     @After
     public void close(){
         closeBrowser();
